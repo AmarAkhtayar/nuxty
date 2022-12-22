@@ -1,0 +1,32 @@
+.body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+section {
+    padding: 5em;
+}
+
+h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.subheading {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    color: rgb(179, 179, 179);
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+/* To add a fade transition to every page of your application, */
+.page-enter-active, .page-leave-active {
+    transition: opacity .5s;
+  }
+  .page-enter, .page-leave-to {
+    opacity: 0;
+  }
+
