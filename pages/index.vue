@@ -82,10 +82,13 @@ export default {
     ...mapState(['makeupData', 'cartItems']),
   },
   methods: {
-    ...mapActions(['getAllMakepus', 'doAddItem']),
+    ...mapActions(['getAllMakepus', 'doAddItem', 'calcNumber']),
     doAddToCart(product) {
+      console.log("add product product", product)
+            console.log("cart items", this.cartItems)
+
       this.doAddItem(product)
-      this.calcNumber()
+      this.calcNumber();
     },
     // goToDetails(brand, type) {
     //   this.$router.push(`/${brand}/${type}`)
@@ -95,7 +98,7 @@ export default {
     if (this.makeupData) {
       this.makeupProducts = this.makeupData
     } else {
-      await this.getAllMakepus('Samir')
+      await this.getAllMakepus();
       this.makeupProducts = this.makeupData
       console.log(this.makeupProducts)
     }

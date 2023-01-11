@@ -10,10 +10,13 @@ export const state = () => ({
 
 export const mutations = {
   getResults(state, payload) {
+    console.log("payload is", payload)
     payload.forEach((item) => (item.itemsNum = 0))
     state.makeupData = payload
   },
   getProductInfo(state, payload) {
+    console.log("payload product info page is", payload)
+
     state.productInfo = payload
     console.log('data', payload)
   },
@@ -22,8 +25,9 @@ export const mutations = {
     state.cartItems.forEach((item) => {
       console.log(item)
       state.itemsNumber += item.itemsNum
-      console.log(state.itemsNum)
     })
+    console.log("here we goooo",state.itemsNumber)
+
   },
   getCategoriesProduct(state, products) {
     products.forEach((item) => (item.itemsNum = 0))
@@ -43,6 +47,7 @@ export const mutations = {
       state.cartItems[itemIndex].itemsNum += 1
     } else {
       state.cartItems.push(payload)
+      console.log("heheheheeh")
     }
     console.log(state.cartItems)
     localStorage.setItem('cart-items', JSON.stringify(state.cartItems))

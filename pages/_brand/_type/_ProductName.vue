@@ -44,6 +44,7 @@ export default {
     ...mapState(['productInfo']),
   },
   async mounted() {
+    console.log("product routing data", this.$route.params)
     const payload = {
       brand: this.$route.params.brand,
       type: this.$route.params.type,
